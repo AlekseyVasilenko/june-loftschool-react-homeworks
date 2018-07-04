@@ -57,12 +57,23 @@ export default class App extends Component {
 
    render() {
       const thisStep = this.state.step;
+      const stepTitles = ['Personal info', 'Card info', 'Success!'];
       return (
          <div className="container">
             <div className="tab-panel">
-               <Step number={1} isSelected={thisStep === 1} children={'Personal info'} isClickable={thisStep > 1} onClick={this.handleTabClick} />
-               <Step number={2} isSelected={thisStep === 2} children={'Card info'} isClickable={thisStep > 2} onClick={this.handleTabClick} />
-               <Step number={3} isSelected={thisStep === 3} children={'Success!'} />
+               {
+                  stepTitles.map((val, i) => {
+                     return (
+                        <Step number={++i}
+                              isSelected={thisStep === i}
+                              children={val}
+                              isClickable={thisStep > i}
+                              onClick={this.handleTabClick}
+                              key={i}
+                        />
+                     )
+                  })
+               }
             </div>
 
             <div className="form-content">
@@ -70,7 +81,11 @@ export default class App extends Component {
             </div>
 
             <div className="button-panel">
-               <button className="button-next" onClick={this.handleClickNextForm} disabled={!this.isFormCommitable()} hidden={this.state.step === 3}>Next</button>
+               <button className="button-next"
+                       onClick={this.handleClickNextForm}
+                       disabled={!this.isFormCommitable()}
+                       hidden={this.state.step === stepTitles.length}
+               >Next</button>
             </div>
          </div>
       );
