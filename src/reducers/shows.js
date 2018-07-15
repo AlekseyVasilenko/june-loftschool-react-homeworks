@@ -1,5 +1,5 @@
 import {handleActions} from 'redux-actions';
-import {showRequest, showSuccess, showFailure} from 'actions/show';
+import {showRequest, showSuccess, showFailure} from '../actions/show';
 
 export default handleActions(
     {

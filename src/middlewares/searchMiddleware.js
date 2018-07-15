@@ -1,5 +1,5 @@
-import {searchRequest, searchSuccess, searchFailure} from 'actions/search';
-import {search} from 'api';
+import {searchRequest, searchSuccess, searchFailure} from '../actions/search';
+import {search} from '../api';
 
 export default store => next => action => {
     if (action.type === searchRequest.toString()) {

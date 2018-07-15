@@ -1,8 +1,8 @@
 import './Search.css'
 import React, {Component, Fragment} from 'react';
 import {connect} from 'react-redux';
-import {searchRequest} from 'actions/search';
-import ShowPreview from 'components/ShowPreview'
+import {searchRequest} from '../../actions/search';
+import ShowPreview from '../../components/ShowPreview'
 
 export class Search extends Component {
     state = {

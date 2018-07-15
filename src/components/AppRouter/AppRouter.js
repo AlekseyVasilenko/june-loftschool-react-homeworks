@@ -1,7 +1,7 @@
 import './AppRouter.css';
 import React, {Component} from 'react';
-import Search from 'components/Search';
-import ShowPage from 'components/ShowPage';
+import Search from '../../components/Search';
+import ShowPage from '../../components/ShowPage';
 import {Switch, Route, withRouter} from 'react-router-dom';
 
 export class AppRouter extends Component {
