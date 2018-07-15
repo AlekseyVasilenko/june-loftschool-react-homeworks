@@ -2,20 +2,21 @@ import {handleActions} from 'redux-actions';
 import {showRequest, showSuccess, showFailure} from '../actions/show';
 
 export default handleActions(
-    {
-        [showRequest]: state => ({
-            ...state,
-            isFetching: true
-        }),
-        [showSuccess]: (state, action) => ({
-            ...state,
-            isFetching: false,
-            entity: action.payload
-        }),
-        [showFailure]: state => ({
-            ...state,
-            isFetching: false
-        })
-    },
-    {entity: {}, isFetching: false}
+   {
+      [showRequest]: state => ({
+         ...state,
+         isLoading: true
+      }),
+      [showSuccess]: (state, action) => ({
+         ...state,
+         isLoading: false,
+         entity: action.payload
+      }),
+      [showFailure]: (state, action) => ({
+         ...state,
+         isLoading: false,
+         error: action.error
+      })
+   },
+   {isLoading: false, entity: {}, error: null}
 );
