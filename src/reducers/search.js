@@ -3,16 +3,16 @@ import {searchRequest, searchSuccess, searchFailure} from 'actions/search';
 
 export default handleActions(
     {
-        [searchRequest.toString()]: state => ({
+        [searchRequest]: state => ({
             ...state,
             isFetching: true
         }),
-        [searchSuccess.toString()]: (state, action) => ({
+        [searchSuccess]: (state, action) => ({
             ...state,
             isFetching: false,
             result: action.payload
         }),
-        [searchFailure.toString()]: (state, action) => ({
+        [searchFailure]: (state, action) => ({
             ...state,
             isFetching: false,
             error: action.error

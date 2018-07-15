@@ -3,16 +3,16 @@ import {showRequest, showSuccess, showFailure} from 'actions/show';
 
 export default handleActions(
     {
-        [showRequest.toString()]: state => ({
+        [showRequest]: state => ({
             ...state,
             isFetching: true
         }),
-        [showSuccess.toString()]: (state, action) => ({
+        [showSuccess]: (state, action) => ({
             ...state,
             isFetching: false,
             entity: action.payload
         }),
-        [showFailure.toString()]: state => ({
+        [showFailure]: state => ({
             ...state,
             isFetching: false
         })
