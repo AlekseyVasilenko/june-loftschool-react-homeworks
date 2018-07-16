@@ -22,14 +22,14 @@ export class Search extends Component {
       this.props.searchRequest(this.state.searchVal);
    };
 
-   handleSearchOnEnter = event => {
-      return (event.key === 'Enter' && this.state.searchVal !== '') && this.handleSearchClick();
+   handleSearchOnEnter = event => { // если инпут не пустой и нажата кнопка Enter
+      return (this.state.searchVal && event.key === 'Enter') && this.handleSearchClick();
    };
 
    render() {
-      const {result, isFetching, error} = this.props;
+      const {result, isLoading, error} = this.props;
 
-      if (isFetching) {
+      if (isLoading) {
          return <p>Выполняется поиск</p>;
       }
 
@@ -67,7 +67,7 @@ export class Search extends Component {
 }
 
 const mapStateToProps = state => ({
-   isFetching: state.search.isFetching,
+   isLoading: state.search.isLoading,
    result: state.search.result,
    error: state.search.error
 });

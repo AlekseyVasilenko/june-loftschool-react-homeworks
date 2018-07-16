@@ -41,7 +41,7 @@ export class ShowPage extends Component {
 }
 
 const mapStateToProps = state => ({
-   isFetching: state.shows.isFetching,
+   isLoading: state.shows.isLoading,
    entity: state.shows.entity
 });
 
