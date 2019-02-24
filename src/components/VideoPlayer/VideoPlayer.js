@@ -1,16 +1,18 @@
-import React, { PureComponent } from "react";
-import videoFile from "./Video.mp4";
-import "./VideoPlayer.css";
+import React, { PureComponent } from "react"
+import videoFile from "./Video.mp4"
+import "./VideoPlayer.css"
 
 export default class VideoPlayer extends PureComponent {
+  static displayName = "Rick&Morty video";
+
   videoRef = React.createRef();
 
   playVideo = () => {
-    this.videoRef.current.play();
+    this.videoRef.current.play()
   };
 
   pauseVideo = () => {
-    this.videoRef.current.pause();
+    this.videoRef.current.pause()
   };
 
   render() {

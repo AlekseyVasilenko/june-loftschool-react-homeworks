@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import "./ModalButton.css";
-import Modal from "./Modal";
+import React, { Component } from "react"
+import "./ModalButton.css"
+import Modal from "./Modal"
 
 export default class ModalButton extends Component {
   state = {
@@ -31,6 +31,6 @@ export default class ModalButton extends Component {
           )
         }
       </>
-    );
+    )
   }
 }

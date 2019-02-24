@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import "./Switcher.css";
+import React, { Component } from "react"
+import "./Switcher.css"
 
 // Для работы этой компоненты нужно использовать методы React.Children.toArray
 // а так же работать с child.type.name и child.type.displayName
@@ -12,7 +12,7 @@ export default class Switcher extends Component {
   handleChangeChild = event => {
     this.setState({
       selectedChild: Number(event.target.dataset.id)
-    });
+    })
   };
 
   render() {
@@ -32,7 +32,7 @@ export default class Switcher extends Component {
                     key={index}
                     onClick={this.handleChangeChild}
                 >{name}</li>
-              );
+              )
             })
           }
         </ul>
@@ -40,13 +40,13 @@ export default class Switcher extends Component {
         {
           React.Children.map(children, (item, index) => {
             if (selectedChild === index) {
-              return item;
+              return item
             } else {
-              return null;
+              return null
             }
           })
         }
       </>
-    );
+    )
   }
 }
