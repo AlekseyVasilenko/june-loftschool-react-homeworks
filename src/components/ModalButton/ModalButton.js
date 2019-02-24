@@ -4,27 +4,20 @@ import Modal from "./Modal";
 
 export default class ModalButton extends Component {
   state = {
-    isModalShow: false
-  };
-
-  hideModal = () => {
-    this.setState({ isModalShow: false });
-  };
-
-  showModal = () => {
-    this.setState({ isModalShow: true });
+    isModalVisible: false
   };
 
   handleClick = () => {
-    this.state.isModalShow ? this.hideModal() : this.showModal();
+      this.setState({ isModalVisible: !this.state.isModalVisible })
   };
 
   render() {
     return (
-      <div>
+      <>
         <button onClick={this.handleClick}>Show modal!</button>
         {
-          this.state.isModalShow ? (
+          this.state.isModalVisible &&
+          (
             <Modal>
               <div className="modal">
                 <div className="modal__fog">
@@ -35,9 +28,9 @@ export default class ModalButton extends Component {
                 </div>
               </div>
             </Modal>
-          ) : null
+          )
         }
-      </div>
+      </>
     );
   }
 }
